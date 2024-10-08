@@ -1,35 +1,44 @@
 package com.shelter.pet.model;
 
-
 import java.util.Set;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Shelter {
-    @Id
-    private long id;
-    private String name;
-    @OneToMany
-    public Set<GenericPet> pets;
+public class Shelter extends AbstractEntity {
 
-    public Set<GenericPet> getPets(){
+    private String name;
+    private String description;
+
+    public Shelter(){}
+
+    public Shelter(String shelterName, String shelterDescription){
+        this.name = shelterName;
+        this.description = shelterDescription;
+    }
+
+    @OneToMany(mappedBy = "shelter")
+    public Set<Pet> pets;
+
+    public Set<Pet> getPets() {
         return pets;
     }
-    public long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
 }
