@@ -1,9 +1,7 @@
 package com.shelter.pet.model;
 
 import com.shelter.pet.enums.PetType;
-
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -13,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Inheritance
-@Table
+@Table(name = "pets")
 public class Pet extends AbstractEntity {
 
     @Nonnull
@@ -22,11 +20,12 @@ public class Pet extends AbstractEntity {
     @ManyToOne
     private Shelter shelter;
 
-    @Column(columnDefinition = "varchar(64) default 'N/D'")
-    private String breed = "N/D";
+    private String petBreed = "N/D";
 
     @Enumerated(EnumType.STRING)
     private PetType petType;
+
+    public Pet(){}
 
     public Pet(String name, Shelter shelter, PetType type) {
         this.petName = name;
@@ -36,7 +35,7 @@ public class Pet extends AbstractEntity {
 
     public Pet(String name, String breed, Shelter shelter, PetType type) {
         this.petName = name;
-        this.breed = breed;
+        this.petBreed = breed;
         this.shelter = shelter;
         this.petType = type;
     }
@@ -53,7 +52,14 @@ public class Pet extends AbstractEntity {
         return shelter;
     }
 
-    public void setShelter(Shelter shelter) {
-        this.shelter = shelter;
+    public void setPetBreed(String breed) {
+        this.petBreed = breed;
+    }
+
+    public String getPetBreed() {
+        return petBreed;
+    }
+    public PetType getPetType() {
+        return petType;
     }
 }

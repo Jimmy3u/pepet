@@ -1,7 +1,6 @@
 package com.shelter.pet.model;
 
 import java.util.Set;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 

@@ -27,6 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
+		<hibernate.version>6.4.8.Final</hibernate.version>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
