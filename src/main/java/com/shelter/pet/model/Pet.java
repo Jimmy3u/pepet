@@ -1,5 +1,7 @@
 package com.shelter.pet.model;
 
+import org.springframework.util.StringUtils;
+
 import com.shelter.pet.enums.PetType;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
@@ -25,23 +27,24 @@ public class Pet extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private PetType petType;
 
-    public Pet(){}
+    public Pet() {
+    }
 
     public Pet(String name, Shelter shelter, PetType type) {
-        this.petName = name;
+        this.petName = StringUtils.capitalize(name);
         this.shelter = shelter;
         this.petType = type;
     }
 
     public Pet(String name, String breed, Shelter shelter, PetType type) {
-        this.petName = name;
+        this.petName = StringUtils.capitalize(name);
         this.petBreed = breed;
         this.shelter = shelter;
         this.petType = type;
     }
 
     public String getPetName() {
-        return petName;
+        return StringUtils.capitalize(petName);
     }
 
     public void setPetName(String petName) {
@@ -59,6 +62,7 @@ public class Pet extends AbstractEntity {
     public String getPetBreed() {
         return petBreed;
     }
+
     public PetType getPetType() {
         return petType;
     }

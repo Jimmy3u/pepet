@@ -21,17 +21,19 @@ public class dbInit implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        shelterRepo.save(new Shelter("Patas", "Sem descrição"));
+        shelterRepo.save(new Shelter("Vida Animal",
+                "O Abrigo Vida Animal é um espaço acolhedor e dedicado ao resgate e cuidado de animais abandonados e em situação de vulnerabilidade. Localizado em meio à natureza, o abrigo conta com amplos canis e áreas verdes, onde os animais podem brincar e socializar. Nossa equipe é formada por voluntários apaixonados, que oferecem amor, carinho e atenção a cada um dos nossos hóspedes peludos."));
         Shelter s = shelterRepo.getReferenceById((long) 1);
 
         petRepository.save(new Pet("carlos", "Husky", s, PetType.DOG));
-        petRepository.save(new Pet("Jamile", s, PetType.REPTILE));       petRepository.save(new Pet("carlos", "Husky", s, PetType.DOG));
-        petRepository.save(new Pet("Coisa", s, PetType.BIRD));       petRepository.save(new Pet("carlos", "Husky", s, PetType.DOG));
+        petRepository.save(new Pet("Jamile", s, PetType.REPTILE));
+        petRepository.save(new Pet("carlos", "Husky", s, PetType.DOG));
+        petRepository.save(new Pet("Coisa", s, PetType.BIRD));
+        petRepository.save(new Pet("carlos", "Husky", s, PetType.DOG));
         petRepository.save(new Pet("Siricutico", s, PetType.CAT));
         petRepository.save(new Pet("Caramelo", "Vira Lata", s, PetType.DOG));
         petRepository.save(new Pet("Destruidor", "Shi-tzu", s, PetType.DOG));
         petRepository.save(new Pet("Macarrão", "Dachshaund", s, PetType.DOG));
-
 
     }
 }

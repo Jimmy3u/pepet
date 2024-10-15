@@ -1,6 +1,8 @@
 package com.shelter.pet.model;
 
 import java.util.Set;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
@@ -8,11 +10,13 @@ import jakarta.persistence.OneToMany;
 public class Shelter extends AbstractEntity {
 
     private String name;
+    @Column(columnDefinition = "TEXT")
     private String description;
 
-    public Shelter(){}
+    public Shelter() {
+    }
 
-    public Shelter(String shelterName, String shelterDescription){
+    public Shelter(String shelterName, String shelterDescription) {
         this.name = shelterName;
         this.description = shelterDescription;
     }
