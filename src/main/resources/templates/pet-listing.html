@@ -33,7 +33,7 @@
         <div class="col-sm">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3">
             <div th:each="sb : ${petList}" class="col">
-              <a th:href="@{/pets/{id}(id=${sb.petId})}">
+              <a th:href="@{/pets/{id}(id=${sb.id})}">
                 <div class="card h-100">
                   <img src="https://pbs.twimg.com/media/GGK7b3FWgAAeTmS?format=jpg&name=large"
                     class="card-img-top img-fluid" alt="...">

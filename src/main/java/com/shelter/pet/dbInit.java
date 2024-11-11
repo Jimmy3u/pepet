@@ -23,6 +23,13 @@ public class dbInit implements CommandLineRunner {
     public void run(String... args) throws Exception {
         shelterRepo.save(new Shelter("Vida Animal",
                 "O Abrigo Vida Animal é um espaço acolhedor e dedicado ao resgate e cuidado de animais abandonados e em situação de vulnerabilidade. Localizado em meio à natureza, o abrigo conta com amplos canis e áreas verdes, onde os animais podem brincar e socializar. Nossa equipe é formada por voluntários apaixonados, que oferecem amor, carinho e atenção a cada um dos nossos hóspedes peludos."));
+        shelterRepo.save(new Shelter("Aumigos",
+                "O Abrigo Aumigos é um espaço acolhedor e dedicado ao resgate e cuidado de animais abandonados e em situação de vulnerabilidade. Localizado em meio à natureza, o abrigo conta com amplos canis e áreas verdes, onde os animais podem brincar e socializar. Nossa equipe é formada por voluntários apaixonados, que oferecem amor, carinho e atenção a cada um dos nossos hóspedes peludos."));
+                shelterRepo.save(new Shelter("Vida Animal 2",
+                "O Abrigo Vida Animal é um espaço acolhedor e dedicado ao resgate e cuidado de animais abandonados e em situação de vulnerabilidade. Localizado em meio à natureza, o abrigo conta com amplos canis e áreas verdes, onde os animais podem brincar e socializar. Nossa equipe é formada por voluntários apaixonados, que oferecem amor, carinho e atenção a cada um dos nossos hóspedes peludos."));
+        shelterRepo.save(new Shelter("Aumigos 2",
+                "O Abrigo Aumigos é um espaço acolhedor e dedicado ao resgate e cuidado de animais abandonados e em situação de vulnerabilidade. Localizado em meio à natureza, o abrigo conta com amplos canis e áreas verdes, onde os animais podem brincar e socializar. Nossa equipe é formada por voluntários apaixonados, que oferecem amor, carinho e atenção a cada um dos nossos hóspedes peludos."));
+
         Shelter s = shelterRepo.getReferenceById((long) 1);
 
         petRepository.save(new Pet("carlos", "Husky", s, PetType.DOG));

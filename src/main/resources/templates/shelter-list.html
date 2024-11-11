@@ -1,0 +1,77 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head}" />
+<style>
+    .card-custom-wide {
+  overflow: hidden;
+  border: 1;
+  width: 100%;
+  
+}
+
+.card-custom-wide-img {
+  height: 160px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* First left setting is a fallback */
+.card-custom-wide .card-custom-avatar img {
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  position: absolute;
+  top: 20px;
+  left: 43.3%;
+  left: calc(50% - 75px);
+  width: 150px;
+  height: 150px;
+}
+
+</style>
+
+<body>
+  <main>
+    <div th:replace="~{fragments/navbar}">&nbsp;</div>
+    <div class="container mt-3">
+      <div class="row g-1">
+        <div class="col-sm">
+          <div class="row row-cols-1  row-cols-lg-2 g-3">
+            <div th:each="s : ${shelterList}" class="col">
+             
+                    <div class="card card-custom-wide">
+                      <div class="card-custom-wide-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                      <div class="card-custom-avatar">
+                        <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
+                      </div>
+                      <div class="card-body">
+                        <h4 class="card-title" th:text="${{s.name}}">Card title</h4>
+                        <p class="card-text" th:text="${{s.description}}">Some example text.</p>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+            </div>
+
+          </div>
+          <br>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div th:replace="~{fragments/footer}">&nbsp;</div>
+  </div>
+  </div>
+</body>
+
+</html>
